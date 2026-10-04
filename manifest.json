@@ -1,0 +1,17 @@
+{
+  "name": "おくちたいそう",
+  "short_name": "おくちたいそう",
+  "description": "マウスピース矯正と一緒に続ける、こども向け口腔トレーニング記録アプリ",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff7ef",
+  "theme_color": "#ff7aa2",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
