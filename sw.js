@@ -1,7 +1,7 @@
 // おくちたいそう Service Worker
-const VERSION = 'okuchi-taiso-v1.0.0';
+const VERSION = 'okuchi-taiso-v1.1.0';
 const ASSETS = ['./','./index.html','./manifest.json',
-  './icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-maskable-512.png'];
+  './apple-touch-icon.png','./icon-192.png','./icon-512.png','./icon-maskable-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));

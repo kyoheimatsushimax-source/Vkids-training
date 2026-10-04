@@ -3,19 +3,19 @@
 V kids（マウスピース矯正）と並行して歯科医院から指示された口腔筋機能トレーニングを、
 毎日「朝・昼・夜」に続けるための子ども向けアプリ。記録はそのまま歯科医への月次レポートになる。
 
-## フォルダ構成
+## ファイル構成（フォルダなし・すべて同じ階層）
 ```
-okuchi-taiso/
-├── index.html            アプリ本体（単一HTML・外部依存なし）
-├── manifest.json         PWA設定
-├── sw.js                 Service Worker（オフライン対応）
-├── icons/
-│   ├── icon-180.png      iPhoneホーム画面用
-│   ├── icon-192.png
-│   ├── icon-512.png
-│   └── icon-maskable-512.png
-└── README.md
+index.html              アプリ本体（単一HTML・外部依存なし）
+manifest.json           PWA設定
+sw.js                   Service Worker（オフライン対応）
+apple-touch-icon.png    iPhoneホーム画面用アイコン（180×180）
+icon-192.png
+icon-512.png
+icon-maskable-512.png   Android用（余白付き）
+README.md
 ```
+サブフォルダを作らないのは、GitHubのWeb（特にiPhone）からアップロードするとフォルダ階層が消え、
+アイコンのパスが合わなくなるため。**8ファイルをリポジトリの一番上にそのまま置けば動く**構成にしている。
 
 ## 公開・インストール（GitHub Pages）
 1. GitHubで新規リポジトリ（例：`okuchi-taiso`）を作り、このフォルダの中身をそのままアップロード
@@ -53,6 +53,11 @@ okuchi-taiso/
 - 記録は端末内（localStorage）のみ。サーバー送信なし
 - iPhoneでは「ホーム画面のアプリ」と「Safari」で保存領域が別。必ずホーム画面から使う
 - 機種変更・アプリ削除の前に「バックアップを書き出す」
+
+## アイコンが反映されないとき
+1. ブラウザで `https://<ユーザー名>.github.io/<リポジトリ名>/apple-touch-icon.png` を開き、絵が出るか確認（404ならファイルの置き場所が違う）
+2. iPhoneのホーム画面のアイコンは「追加した瞬間」に保存され、後から変わらない → **ホーム画面から削除して、Safariで開き直してから再追加**
+3. それでも古い場合：設定 → アプリ → Safari → 詳細 → Webサイトデータ → `github.io` を削除してから再追加
 
 ## 更新するとき
 `index.html` を差し替えたら `sw.js` の `VERSION` を上げてpush（キャッシュ更新のため）。
